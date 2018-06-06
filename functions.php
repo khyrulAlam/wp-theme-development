@@ -1,4 +1,5 @@
 <?php
+
 if(site_url() == 'http://localhost/wpsahco'){
     define('VERSION',time());
 }else{
@@ -9,8 +10,9 @@ function lw_setup_theme(){
     load_theme_textdomain('wpsahco');
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
-    add_theme_support('custom-logo');
-    add_theme_support('custom-header');
+    add_theme_support('custom-logo',array(
+        'width'=> '270'
+    ));
     register_nav_menu('main-menu',__('Main Menu','lw1'));
     register_nav_menu('footer-menu',__('Footer Menu','lw1'));
 }
@@ -35,3 +37,15 @@ function sahco_assets(){
 }
 
 add_action( "wp_enqueue_scripts", "sahco_assets" );
+
+
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+if ( ! file_exists( get_template_directory() . '/inc/wp-bootstrap-navwalker.php' ) ) {
+	// file does not exist... return an error.
+	return new WP_Error( 'wp-bootstrap-navwalker-missing', __( 'It appears the wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+} else {
+	// file exists... require it.
+    require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+}
+//End Registation Nav Menu

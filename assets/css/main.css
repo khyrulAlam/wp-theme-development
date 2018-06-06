@@ -109,6 +109,13 @@ textarea {
 .saho__navigation{
     font-family: 'Roboto', sans-serif;
 }
+.saho__navigation .nav{
+    margin-top: 16px;
+}
+.saho__navigation nav.navbar.bootsnav ul.nav > li > a{
+    text-transform: uppercase;
+}
+
 .saho__navigation nav.navbar.bootsnav ul.nav > li > a:hover{
     background-color: #44ae48;
     color: #FFF;

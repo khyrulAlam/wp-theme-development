@@ -25,14 +25,21 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#brand"><img src="<?php echo get_theme_file_uri()?>/assets/img/logo.png" class="logo" alt="" width="270"></a>
+                <a class="navbar-brand" href="<?php echo site_url()?>">
+                    <?php 
+                        $custom_logo_id = get_theme_mod( 'custom_logo' );
+                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    ?>    
+                    <img src="<?= $image[0];?>" class="logo" alt="" width="270">
+                    
+                </a>
             </div>
             <!-- End Header Navigation -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
 
-                <ul class="nav navbar-nav navbar-left" style="margin-top: 16px;">
+                <!-- <ul class="nav navbar-nav navbar-left" style="margin-top: 16px;">
 
                     <li><a href="#">HOME</a></li>
                     <li class="dropdown">
@@ -65,7 +72,18 @@
                     </li>
                     <li><a href="#">ACHIEVEMENTS</a></li>
                     <li><a href="#">CONTACT</a></li>
-                </ul>
+                </ul> -->
+                
+                <?php 
+                    wp_nav_menu(array(
+                        'theme_location'    => 'main-menu',
+                        'container'         => 'ul',
+                        'menu_class'        => 'nav navbar-nav navbar-left',
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'            => new WP_Bootstrap_Navwalker()
+                    ));
+                ?>
+
                 <div class="pull-right">
                     <button class="btn top__button">Buy/Sell Order</button>
                 </div>

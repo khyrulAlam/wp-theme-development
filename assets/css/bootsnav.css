@@ -533,6 +533,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         content: "\f0d7";
         margin-left: 5px;
         margin-top: 2px;
+        display: none;
     }
 
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu{
