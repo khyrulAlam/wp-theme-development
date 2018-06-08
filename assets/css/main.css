@@ -225,6 +225,21 @@ textarea {
 .content__panel__widget .panel-title>a:hover{
     text-decoration: none;
 }
+.form-download-area{
+    padding: 8px;
+}
+.form-download-area a{
+    background: #2668a1;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.form-download-area a:hover{
+    text-decoration: none;
+}
 
 
 
@@ -318,12 +333,82 @@ textarea {
 
 
 
+/*  Pages style  */
 
-
-
-
-
-
+.sahco_board_of_directory{
+    padding: 35px 0px;
+    background: #ececec;
+}
+.sahco_board_of_directory a{
+    color:black;
+}
+.sahco_board_of_directory a:hover{
+    text-decoration: none;
+}
+.sahco_board_of_directory .thumbnail{
+    border: none;
+    padding: 0px;
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,.12);
+}
+.sahco_board_of_directory .thumbnail img{
+    max-height: 310px;
+    width: 100%;
+    overflow: hidden;
+}
+.sahco_board_of_directory .d_shot_direction{
+    max-height: 95px;
+    min-height: 95px;
+    overflow: hidden;
+    padding: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: 0.4s all;
+}
+.sahco_board_of_directory .d_shot_direction h3{
+    margin: 0px;
+    color: #4cae4c;
+}
+.sahco_board_of_directory .d_shot_direction h4{
+    margin: 0px;
+    color: #b9b9b9;
+    margin-bottom: 10px;
+}
+.sahco_board_of_directory a:hover .d_shot_direction h3{
+    color: #FFF;
+}
+.sahco_board_of_directory a:hover .d_shot_direction h4{
+    color: #FFF;
+}
+.sahco_board_of_directory a:hover .d_shot_direction{
+    background: #1c6d1c;
+    border-radius: 0px 0px 4px 4px;
+}
+/* // Director detaile page  */
+.sahco_director_details{
+    padding: 35px 0px;
+}
+.sahco_director_details img{
+    border-radius: 6px;
+}
+.full-details-section{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.full-details-section > h3{
+    margin: 0px;
+    color: #44ae48;
+}
+.full-details-section > h5{
+    position: relative;
+    padding-bottom: 10px;
+}
+.full-details-section > h5:after{
+    content: '';
+    position: absolute;
+    background: #44ae47;
+    width: 9%;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+}
 
 
 

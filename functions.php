@@ -49,3 +49,69 @@ if ( ! file_exists( get_template_directory() . '/inc/wp-bootstrap-navwalker.php'
     require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 }
 //End Registation Nav Menu
+
+
+function sahco_create_post_type() {
+    
+    register_post_type( 'marketings',
+        array(
+        'labels' => array(
+            'name' => __( 'Marketings' ),
+            'singular_name' => __( 'Marketing' )
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' =>  'dashicons-chart-line',
+        'supports' => array( 'title', 'editor','thumbnail' )
+        )
+    );
+    register_post_type('product_Services',
+        array(
+        'labels' => array(
+            'name' => __( 'Product And Service' ),
+            'singular_name' => __( 'Product-Service' )
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-nametag',
+        'supports' => array( 'title', 'editor','thumbnail' )
+        )
+    );
+    register_post_type('investors',
+        array(
+        'labels' => array(
+            'name' => __( 'Investors' ),
+            'singular_name' => __( 'Investor' )
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-welcome-add-page',
+        'supports' => array( 'title', 'editor','thumbnail' )
+        )
+    );
+    register_post_type('form_downloads',
+        array(
+        'labels' => array(
+            'name' => __( 'Forms Download' ),
+            'singular_name' => __( 'Form Download' )
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-welcome-add-page',
+        'supports' => array( 'title' )
+        )
+    );
+    register_post_type('board_of_directors',
+        array(
+        'labels' => array(
+            'name' => __( 'Board of Directors' ),
+            'singular_name' => __( 'Board of Director' )
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-welcome-add-page',
+        'supports' => array('title')
+        )
+    );
+}
+add_action( 'init', 'sahco_create_post_type' );

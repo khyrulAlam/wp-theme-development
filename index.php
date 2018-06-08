@@ -279,10 +279,28 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-3">
                 <div class="content__box">
                     <h3>Downloads</h3>
-                    <div class="content__panel__widget">
+                    <div class="form-download-area">
+                    <?php
+                        $args = array( 
+                            'post_type' => 'form_downloads', 
+                            'posts_per_page' => -1,
+                            'order'  => 'ASC'
+                        );
+                        $loop = new WP_Query( $args );
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                        $form_file = get_field('form_file');
+                    ?>
+
+                        <a href="<?= esc_attr( $form_file ); ?>" target="_blank"><?= the_title();?></a>
+
+                    <?php endwhile; ?>
+                    </div>
+
+                    <!-- <div class="content__panel__widget">
                         <div class="panel-group" id="downloads__panel">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -393,7 +411,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
